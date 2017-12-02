@@ -1,0 +1,22 @@
+
+function sumPrimes(num) {
+ 
+  var arr = [], i, j, primes = [], res = 0;
+    for (i = 2; i <= num; ++i) {
+        if (!arr[i]) {
+            primes.push(i);
+            for (j = i << 1; j <= num; j += i) {
+                arr[j] = true;
+            }
+        }
+    }
+  
+    for(var k=0; k<primes.length; k++){
+    res += primes[k];
+  }
+  
+    return res;
+}
+
+
+sumPrimes(25);
